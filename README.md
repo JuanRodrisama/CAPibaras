@@ -1,6 +1,5 @@
-# CAPibaras
 
-# *GRUPO CAPIBARAS :)! *#
+*GRUPO CAPIBARAS :)!
 
 Este equipo está formado por _Víctor Manuel (como el cantante), Andrea, Daniel, Mauro, Miguel Ángel (Lafu), Juan, Juan Manuel y Adrián._
 
