@@ -1,17 +1,11 @@
 # CAPibaras
 
-Prueba de Push de MiguelLafu
+# *GRUPO CAPIBARAS :)! *#
 
-Prueba de Push de Victor Manuel (como el cantante)
+Este equipo está formado por _Víctor Manuel (como el cantante), Andrea, Daniel, Mauro, Miguel Ángel (Lafu), Juan, Juan Manuel y Adrián._
 
-Prueba de Push de Adrian Naves
+En la Wiki encontrarás <b>Apuntes de Git, Diario y Glosario</b>
 
-Modificación de Juanito
+*IMPORTANTE*: _Los garbanzos antes de ser cocidos, hay que dejarlos en remojo 12 horas antes_
 
-Prueba de push de Juan M. Nodal
-
-Cambio de último momento de MMAS
-
-Prueba Push Andrea (la que mide 1.55)
-
-Modificación jnodalco
+####_CAPibaras Team_####
