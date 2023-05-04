@@ -8,4 +8,5 @@ variable "resource_group_name" {
 
 variable "allocation_method" {
   type = list(string)
+  
 }
