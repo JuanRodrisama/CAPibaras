@@ -21,10 +21,6 @@ resource "azurerm_virtual_network" "my_terraform_network" {
 
 module "subnet" {
   source = "./subnet"
-
-  resource_group_name = module.resource_group.resource_group_name
-  virtual_network_name = module.virtual_network.virtual_network_name
-  subnet_address_prefixes = ["10.0.1.0/24"]
 }
 
 # Create public IPs
