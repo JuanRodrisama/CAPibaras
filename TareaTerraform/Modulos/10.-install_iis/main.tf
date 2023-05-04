@@ -1,11 +1,11 @@
 # Install IIS web server to the virtual machine
 resource "azurerm_virtual_machine_extension" "web_server_install" {
-  name                       = "${random_pet.prefix.id}-wsi"
-  virtual_machine_id         = azurerm_windows_virtual_machine.main.id
-  publisher                  = "Microsoft.Compute"
-  type                       = "CustomScriptExtension"
-  type_handler_version       = "1.8"
-  auto_upgrade_minor_version = true
+  name                       = var.name
+  virtual_machine_id         = var.virtual_machine_id
+  publisher                  = var.publisher
+  type                       = var.type
+  type_handler_version       = var.type_handler_version
+  auto_upgrade_minor_version = var.auto_upgrade_minor_version
 
   settings = <<SETTINGS
     {
