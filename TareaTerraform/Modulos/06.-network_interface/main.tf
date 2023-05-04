@@ -1,13 +1,13 @@
 # Create network interface
 resource "azurerm_network_interface" "my_terraform_nic" {
-  name                = "${random_pet.prefix.id}-nic"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  name                = var.name_network_interface
+  location            = var.location
+  resource_group_name = var.resource_group_name
 
   ip_configuration {
-    name                          = "my_nic_configuration"
-    subnet_id                     = azurerm_subnet.my_terraform_subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.my_terraform_public_ip.id
+    name                          = var.name_ip
+    subnet_id                     = var.subnet_id
+    private_ip_address_allocation = var.private_ip_address_allocation
+    public_ip_address_id          = var.public_ip_address_id
   }
 }
