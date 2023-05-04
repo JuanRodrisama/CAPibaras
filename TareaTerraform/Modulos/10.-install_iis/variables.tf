@@ -18,6 +18,6 @@ variable " type_handler_version " {
   type = list(string)
 }
 
-variable "  auto_upgrade_minor_version" {
+variable " auto_upgrade_minor_version" {
   type = list(string)
 }
