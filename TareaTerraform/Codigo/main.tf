@@ -1,9 +1,9 @@
 module "resource_group" {
-  source = "../Modulos/1.resource_group"
+  source = "../Modulos/1.-resource_group"
 }
 
 module "virtual_network" {
-  source = "../Modulos/2.virtual_network"
+  source = "../Modulos/2.-virtual_network"
 }
 
 module "subnet" {
