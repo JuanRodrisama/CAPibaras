@@ -1,3 +1,7 @@
+variable "name_storage_account" {
+  type = string
+}
+
 variable "location" {
   type = list(string)
 }

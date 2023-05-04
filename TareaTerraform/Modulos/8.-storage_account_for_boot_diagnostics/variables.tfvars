@@ -1,0 +1,5 @@
+name_storage_account = "diag${var.name}"
+location = "eastus"
+resource_group_name = "${var.name}-rg"
+account_tier = "Standard"
+account_replication_type = "LRS"
