@@ -7,11 +7,7 @@ module "virtual_network" {
 }
 
 module "subnet" {
-  source = "./subnet"
-
-  resource_group_name = module.resource_group.resource_group_name
-  virtual_network_name = module.virtual_network.virtual_network_name
-  subnet_address_prefixes = ["10.0.1.0/24"]
+  source = "../Modulos/3.-Subnet"
 }
 
 module "public_ips" {
@@ -30,7 +26,7 @@ module "security_group_to_network_interface" {
   source = "../Modulos/7.-security_group_to_network_interface"
 }
 
-module "storage_account_for_boot_diagnostics" ´{
+module "storage_account_for_boot_diagnostics" {
   source = "../Modulos/8.-storage_account_for_boot_diagnostics"
 } 
 
