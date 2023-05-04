@@ -1,4 +1,4 @@
-name                       = "${random_pet.prefix.id}-wsi"
+name_install_iss           = "${var.name}-wsi"
 virtual_machine_id         = azurerm_windows_virtual_machine.main.id
 publisher                  = "Microsoft.Compute"
 type                       = "CustomScriptExtension"
