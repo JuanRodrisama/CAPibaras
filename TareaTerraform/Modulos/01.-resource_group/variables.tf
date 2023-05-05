@@ -1,3 +1,7 @@
-variable "var.resource_group_location" {
+variable "name" {
+
+}
+
+variable "resource_group_location" {
 
 }

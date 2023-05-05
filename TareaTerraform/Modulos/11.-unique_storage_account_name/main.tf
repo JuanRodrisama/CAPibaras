@@ -2,7 +2,7 @@
 resource "random_id" "random_id" {
   keepers = {
     # Generate a new ID only when a new resource group is defined
-    resource_group = var.resource_group
+    resource_group = "${var.name}-rg"
   }
 
   byte_length = var.byte_length

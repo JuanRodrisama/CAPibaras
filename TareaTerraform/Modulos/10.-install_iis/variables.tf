@@ -1,7 +1,3 @@
-variable "name_install_iss" {
-  type = string
-}
-
 variable "virtual_machine_id" {
   type = string
 }

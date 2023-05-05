@@ -1,8 +1,8 @@
 # Create Network Security Group and rules
 resource "azurerm_network_security_group" "my_terraform_nsg" {
-  name_network_security       = var.name_network_security
-  location                    = var.location
-  resource_group_name         = var.resource_group_name
+  name_network_security             = "${var.name}-nsg"
+  location                          = var.resource_group_location
+  resource_group_name               = "${var.name}-rg"
 
   security_rule {
     name_ssh                       = var.name_ssh

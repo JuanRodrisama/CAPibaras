@@ -1,13 +1,8 @@
-variable "name_storage_account" {
+variable "name" {
+}
+
+variable "resource_group_location" {
   type = string
-}
-
-variable "location" {
-  type = list(string)
-}
-
-variable "resource_group_name" {
-  type = list(string)
 }
 
 variable "account_tier" {

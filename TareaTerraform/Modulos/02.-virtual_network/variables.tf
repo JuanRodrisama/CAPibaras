@@ -1,15 +1,12 @@
-variable "name_vnet" {
-  type = string
+variable "name" {
+
 }
 
 variable "address_space" {
   type = string
 }
 
-variable "location" {
+variable "resource_group_location" {
   type = list(string)
 }
 
-variable "resource_group_name" {
-  type = list(string)
-}

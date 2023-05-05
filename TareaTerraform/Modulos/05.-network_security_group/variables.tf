@@ -1,5 +1,9 @@
-variable "name_network_security" {
-  type = list(string)
+variable "name" {
+
+}
+
+variable "resource_group_location" {
+  type = string
 }
 
 #SSH

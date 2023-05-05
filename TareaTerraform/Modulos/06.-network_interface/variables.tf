@@ -1,14 +1,12 @@
-variable "name_network_interface"  {
+variable "name" {
 
-     type = string
 }
 
-variable "location" {
-   type = list(string)
+variable "resource_group_location" {
+  type = string
 }
-variable "resource_group_name" {
-  type = list(string)
-}
+
+
 variable "name_ip" {
 type= string  
 }

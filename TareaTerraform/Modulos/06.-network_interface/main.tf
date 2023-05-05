@@ -1,8 +1,8 @@
 # Create network interface
 resource "azurerm_network_interface" "my_terraform_nic" {
-  name                = var.name_network_interface
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  name                            = "${var.name}-nic"
+  location                        = var.resource_group_location
+  resource_group_name             = "${var.name}-rg"
 
   ip_configuration {
     name                          = var.name_ip
