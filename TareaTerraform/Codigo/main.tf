@@ -1,9 +1,13 @@
 module "resource_group" {
   source = "../Modulos/1.-resource_group"
+
+  name                    = "${var.name}-rg"
+  resource_group_location = var.resource_group_location
 }
 
 module "virtual_network" {
   source = "../Modulos/2.-virtual_network"
+
 }
 
 module "subnet" {
