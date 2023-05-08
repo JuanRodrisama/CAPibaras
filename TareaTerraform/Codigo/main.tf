@@ -120,14 +120,47 @@ module "create_virtual_machine" {
 
   boot_diagnostics {
     storage_account_uri             = var.storage_account_uri
+  }
 }
 
 module "install_iis" {
   source = "../Modulos/10.-install_iis"
 
-  
+  name_install_iss           = "${var.name}-wsi"
+  virtual_machine_id         = var.virtual_machine_id
+  publisher                  = var.publisher
+  type                       = var.type
+  type_handler_version       = var.type_handler_version
+  auto_upgrade_minor_version = var.auto_upgrade_minor_version
+
+  settings = <<SETTINGS
+    {
+      "commandToExecute": "powershell -ExecutionPolicy Unrestricted Install-WindowsFeature -Name Web-Server -IncludeAllSubFeature -IncludeManagementTools"
+    }
+  SETTINGS
 }
 
 module "unique_storage_account_name" {
   source = "../Modulos/11.-unique_storage_account_name"
+
+  keepers = {
+    # Generate a new ID only when a new resource group is defined
+    resource_group = "${var.name}-rg"
+  }
+
+  byte_length = var.byte_length
+
+  resource "random_password" "password" {
+  length      = var.length
+  min_lower   = var.min_lower
+  min_upper   = var.min_upper
+  min_numeric = var.min_numeric 
+  min_special = var.min_special
+  special     = var.special
+  }
+
+  resource "random_pet" "prefix" {
+  prefix = var.prefix
+  length = var.length
+  }
 }
