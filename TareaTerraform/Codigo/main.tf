@@ -1,12 +1,12 @@
 module "resource_group" {
-  source = "../Modulos/1.-resource_group"
+  source = "../Modulos/01.-resource_group"
 
   name                    = "${var.name}-rg"
   resource_group_location = var.resource_group_location
 }
 
 module "virtual_network" {
-  source = "../Modulos/2.-virtual_network"
+  source = "../Modulos/02.-virtual_network"
 
   name_vnet           = "${var.name}-vnet"
   address_space       = var.address_space
@@ -15,7 +15,7 @@ module "virtual_network" {
 }
 
 module "subnet" {
-  source = "../Modulos/3.-Subnet"
+  source = "../Modulos/03.-Subnet"
 
   name_subnet           = "${var.name}-subnet"
   resource_group_name   = "${var.name}-rg"
@@ -24,14 +24,14 @@ module "subnet" {
 }
 
 module "public_ips" {
-  source = "../Modulos/4.-public_ips"
+  source = "../Modulos/04.-public_ips"
   location            = var.resource_group_location  
   resource_group_name = "${var.name}-rg"
   allocation_method   = var.allocation_method
 }
 
 module "network_security_group" {
-  source = "../Modulos/5.-network_security_group"
+  source = "../Modulos/05.-network_security_group"
 
   name_network_security             = "${var.name}-nsg"
   location                          = var.resource_group_location
@@ -62,7 +62,7 @@ module "network_security_group" {
 }
 
 module "network_interface" {
-  source = "../Modulos/6.-network_interface"
+  source = "../Modulos/06.-network_interface"
 
   name                            = "${var.name}-nic"
   location                        = var.resource_group_location
@@ -77,14 +77,14 @@ module "network_interface" {
 }
 
 module "security_group_to_network_interface" {
-  source = "../Modulos/7.-security_group_to_network_interface"
+  source = "../Modulos/07.-security_group_to_network_interface"
 
   network_interface_id      = var.network_interface.id
   network_security_group_id = var.network_security_group.id
 }
 
 module "storage_account_for_boot_diagnostics" {
-  source = "../Modulos/8.-storage_account_for_boot_diagnostics"
+  source = "../Modulos/08.-storage_account_for_boot_diagnostics"
 
   name_storage_account     = "diag${var.name}"
   location                 = var.resource_group_location
@@ -94,7 +94,7 @@ module "storage_account_for_boot_diagnostics" {
 } 
 
 module "create_virtual_machine" {
-  source = "../Modulos/9.-create_virtual_machine"
+  source = "../Modulos/09.-create_virtual_machine"
 
   virtual_machine_name              = "${var.prefix}-vm"
   admin_username                    = var.admin_username

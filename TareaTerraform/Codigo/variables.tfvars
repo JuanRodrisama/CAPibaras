@@ -62,7 +62,7 @@
 #Modulo 9 - Check
 
     admin_username                      = "azureuser"
-    admin_password                      = random_password.password.result
+    admin_password                      = 1234
     network_interface_ids               = [azurerm_network_interface.my_terraform_nic.id]
     storage_account_uri                 = azurerm_storage_account.my_storage_account.primary_blob_endpoint
 

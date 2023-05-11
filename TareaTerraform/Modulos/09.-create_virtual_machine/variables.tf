@@ -6,26 +6,27 @@ variable "resource_group_location" {
 }
 
 
-variable "var.admin_username" {
-
+variable "admin_username" {
+  type = string
 }
 
-variable "var.admin_password" {
+variable "admin_password" {
+  type = string
+}
+
+variable "location" {
+  type = string
   
 }
 
-variable "var.location" {
-  
+variable "resource_group_name" {
+  type = string
 }
 
-variable "var.resource_group_name" {
-  
+variable "network_interface_ids" {
+  type = string
 }
 
-variable "var.network_interface_ids" {
-  
-}
-
-variable "var.storage_account_uri" {
-  
+variable "storage_account_uri" {
+  type = string
 }
