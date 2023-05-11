@@ -13,7 +13,7 @@ variable "min_upper" {
 
 }
 
-variable "min_numeric " {
+variable "min_numeric" {
 
 }
 
@@ -29,6 +29,3 @@ variable "prefix" {
 
 }
 
-variable "length" {
-
-}
