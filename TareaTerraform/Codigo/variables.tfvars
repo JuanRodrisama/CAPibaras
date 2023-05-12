@@ -47,9 +47,9 @@
     name_ip                             = "my_nic_configuration"
     subnet_id                           = azurerm_subnet.my_terraform_subnet.id
     private_ip_address_allocation       = "Dynamic"
-    public_ip_address_id                = azurerm_public_ip.my_terraform_public_ip.id
+    public_ip_address_id                = ["10.0.0.0/16"]
 
-#Modulo 7 - Check
+#Modulo 7 - 
 
     network_interface_id                = "azurem_network_interface.my_terraform_nic.id"
     network_security_group_id           = "azurem_network_security_group.my_terraform_ngs.id"
