@@ -1,3 +1,4 @@
+#Modulo 01
 module "resource_group" {
   source = "../modulos/01.-resource_group"
 
@@ -5,6 +6,7 @@ module "resource_group" {
   prefix      = module.generador.prefix
 }
 
+#Modulo 02
 module "network" {
   source = "../modulos/02.-network"
 
@@ -22,6 +24,7 @@ module "network" {
   private_ip_address_allocation_net_int = var.private_ip_address_allocation_net_int
 }
 
+#Modulo 03
 module "virtualizacion" {
   source = "../modulos/03.-virtualizacion"
 
@@ -30,7 +33,6 @@ module "virtualizacion" {
   account_tier = var.account_tier
   location = module.resource_group.location
   name = module.resource_group.name
-  //password = module.generador.password
   prefix = module.generador.prefix
   #Recurso 02
   adm_username             = var.adm_username
@@ -43,6 +45,7 @@ module "virtualizacion" {
   type_handler_version     = var.type_handler_version
 }
 
+#Modulo 04
 module "generador" {
   source = "../modulos/04.-generador"
 

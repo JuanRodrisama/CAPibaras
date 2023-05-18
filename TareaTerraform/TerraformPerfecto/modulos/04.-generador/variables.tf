@@ -1,36 +1,19 @@
-variable "byte_length" {
-  type = string
-}
+#Recurso 01
+variable "byte_length" {}
 
-variable "length_pass" {
-  type = string
-}
-
-variable "min_lower" {
-  type = string
-}
-
-variable "min_upper" {
-  type = string
-}
-
-variable "min_numeric" {
-  type = string
-}
-
-variable "min_special" {
-  type = string
-}
-
+#Recurso 02
+variable "length_pass" {}
+variable "min_lower" {}
+variable "min_upper" {}
+variable "min_numeric" {}
+variable "min_special" {}
 variable "special" {
   type = bool
 }
 
-variable "prefix" {
-  type = string
-}
+#Recurso 03
+variable "prefix" {}
+variable "length" {}
 
-variable "length" {
-  type = string
-}
+#input
 variable "name" {}
