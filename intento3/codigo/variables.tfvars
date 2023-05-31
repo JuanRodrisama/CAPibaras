@@ -30,11 +30,11 @@ version_vm                                 = "latest"
 #Recurso 3
 count_vm_client                            = 3
 vm_size_client                             = "standard_b1ms"
-#storage_on_disk
-create_option_attach                       = "Attach"
-#os_profile  
-usernamevm                                 = "capi"
-passvm                                     = "Pass1234"
+#source_image_reference
+publisher_client                           = "Debian"
+offer_client                               = "Debian11"
+sku_client                                 = "11-backports-gen2"
+version_vm_client                          = "latest"
 
 #Modulo 3
 #Recurso 1

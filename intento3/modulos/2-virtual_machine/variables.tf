@@ -24,10 +24,9 @@ variable "version_vm" {}
 variable "count_vm_client" {}
 variable "vm_size_client" {}
 variable "network_interface_ids_client" {}
-#storage_os_disk
-variable "vm_os_disk" {}
-variable "create_option_attach" {}
-variable "managed_disk_id_client" {}
-#os_profile
-variable "usernamevm" {}
-variable "passvm" {}
+variable "os_disk_id" {}
+#source_image_reference
+variable "publisher_client" {}
+variable "offer_client" {}
+variable "sku_client" {}
+variable "version_vm_client" {}

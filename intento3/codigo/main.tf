@@ -11,6 +11,9 @@ module "network" {
   address_prefixes_web          = var.address_prefixes_web
 #Recurso 3
   address_prefixes_db           = var.address_prefixes_db
+#Recurso 4
+  vm_count                      = var.vm_count
+  private_ip_address_allocation = var.private_ip_address_allocation
 }
 
 #Modulo 2
@@ -27,7 +30,7 @@ module "vm_availability_set" {
   vm_count_server               = var.vm_count_server
   size_vm_server                = var.size_vm_server
   admin_username                = var.admin_username
-  network_interface_ids         = module.network.interface_id[count.index]
+  network_interface_ids_server  = module.network.interface_id[count.index]
 #on_disk
   caching                       = var.caching
   storage_account_type          = var.storage_account_type
@@ -41,12 +44,12 @@ count_vm_client                 = var.count_vm_client
 vm_size_client                  = var.vm_size_client
 network_interface_ids_client    = module.network.interface_id[count.index + 3]
 #storage_os_disk
-vm_os_disk                      = module.storage.os_disk_names[count.index]
-create_option_attach            = var.create_option_attach
-managed_disk_id_client          = module.storage.os_disk_ids[count.index]
-#os_profile
-usernamevm                      = var.usernamevm 
-passvm                          = var.passvm
+os_disk_id                      = module.storage.os_disk_ids[count.index]
+#source_image_reference
+publisher_client                = var.publisher_client
+offer_client                    = var.offer_client
+sku_client                      = var.sku_client 
+version_vm_client               = var.version_vm_client
 }
 
 #Modulo 3

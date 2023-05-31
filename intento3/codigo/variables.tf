@@ -41,11 +41,11 @@ variable "version_vm" {}
 #Recurso 3
 variable "count_vm_client" {}
 variable "vm_size_client" {}
-#storage_os_disk
-variable "create_option_attach" {}
-#os_profile
-variable "usernamevm" {}
-variable "passvm" {}
+#source_image_reference
+variable "publisher_client" {}
+variable "offer_client" {}
+variable "sku_client" {}
+variable "version_vm_client" {}
 
 #Modulo 3
 #Recurso 1

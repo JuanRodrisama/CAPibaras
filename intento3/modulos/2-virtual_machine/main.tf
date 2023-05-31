@@ -14,7 +14,7 @@ resource "azurerm_linux_virtual_machine" "server" {
   name                                   = "${var.name}-vm${count.index + 1}"
   resource_group_name                    = var.name_rg
   location                               = var.location
-  size                                   = var.size_vm
+  size                                   = var.size_vm_server
   availability_set_id                    = azurerm_availability_set.my_avset.id
   admin_username                         = var.admin_username
   network_interface_ids                  = var.network_interface_ids_server
@@ -23,7 +23,7 @@ resource "azurerm_linux_virtual_machine" "server" {
   admin_password                         = "Cap123"
 
   os_disk {
-    name                                 = "${var.name}-${count.index + 1}-vmdisk"
+    name                                 = "${var.name}-${count.index + 1}-serverdisk"
     caching                              = var.caching
     storage_account_type                 = var.storage_account_type
   }
@@ -36,26 +36,30 @@ resource "azurerm_linux_virtual_machine" "server" {
 }
 
 #Recurso 3
-resource "azurerm_virtual_machine" "client" {
+resource "azurerm_linux_virtual_machine" "client" {
   count                                  = var.count_vm_client
-  name                                   = "vm-${count.index}"
+  name                                   = "${var.name}-vm${count.index + 1}"
   resource_group_name                    = var.name_rg
   location                               = var.location
   size                                   = var.vm_size_client
+  availability_set_id                    = azurerm_availability_set.my_avset.id
+  admin_username                         = var.admin_username
   network_interface_ids                  = var.network_interface_ids_client
-  storage_os_disk {
-    name                                 = var.vm_os_disk
+  
+  disable_password_authentication        = false
+  admin_password                         = "Cap123"
+ 
+  os_disk {
+    name                                 = "${var.name}-${count.index + 1}-clientdisk"
     caching                              = var.caching
-    create_option                        = var.create_option_attach
-    managed_disk_id                      = var.managed_disk_id_client
-
-  os_profile{
-    computer_name                        = "vm-${count.index}"
-    admin_username                       = var.usernamevm
-    admin_password                       = var.passvm
+    storage_account_type                 = var.storage_account_type
+    managed_disk_id                      = var.os_disk_id
   }
-  os_profile_linux_config{
-    disable_password_authenticator       = false
-  }
+    
+  source_image_reference {
+    publisher                            = var.publisher_client
+    offer                                = var.offer_client
+    sku                                  = var.sku_client
+    version                              = var.version_vm_client
   }
 }

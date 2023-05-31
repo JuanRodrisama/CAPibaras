@@ -8,8 +8,8 @@ variable "vnet_address" {}
 variable "address_prefixes_web" {}
 
 #Recurso 3
-variable "vm_count" {}
 variable "address_prefixes_db" {}
 
 #Recurso 4
+variable "vm_count" {}
 variable "private_ip_address_allocation" {}
